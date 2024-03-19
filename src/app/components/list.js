@@ -1,7 +1,8 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { largeTomatos } from "./plant-data"
+import { largeTomatos } from "../plant-data"
+import PlantList from "./plat-list"
 
 export default function List () {
     const [items, setItems] = useState([])
@@ -10,11 +11,17 @@ export default function List () {
         setItems(() => {
             return largeTomatos
         })
-    })
+    }, [])
+
     
     return(
         <>
-            <h1>this is where the items will be displayed</h1>
+            {items.map(item => {
+                return (
+                    < PlantList price={item.price} name={item.name} id={item.id}/> 
+
+                )
+            })}
             
         </>
     )
