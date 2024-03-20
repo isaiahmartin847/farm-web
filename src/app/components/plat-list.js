@@ -1,4 +1,6 @@
-export default function PlantList ({name, id, price}) {
+import moreBtn from "./more-btn-function";
+
+export default function PlantList ({name, id, price, url}) {
     return ( 
         <div key={id} className="border-2  m-0.5 flex flex-col justify-center items-center">
             <div className="m-0.5 p-3">
@@ -8,7 +10,7 @@ export default function PlantList ({name, id, price}) {
                     <li>test</li>
                 </ul>
                 <button className='text-lg mr-1 p-2 rounded-lg bg-blue-500 text-white'>Add to cart</button>
-                <button className="text-lg p-2 rounded-lg bg-gray-400 text-white">More</button>
+                <button className="text-lg p-2 rounded-lg bg-gray-400 text-white" onClick={() => moreBtn(url)}>More</button>
 
             </div>
         </div>
