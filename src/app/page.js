@@ -1,4 +1,4 @@
-import NavBar from "./components/header";
+import NavBar from "./components/nav";
 import List from "./components/list";
 
 
