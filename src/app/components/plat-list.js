@@ -1,3 +1,4 @@
+import addToCart from "./add-to-cart-function";
 import moreBtn from "./more-btn-function";
 
 export default function PlantList ({name, id, price, url, color, colorCode}) {
@@ -7,10 +8,10 @@ export default function PlantList ({name, id, price, url, color, colorCode}) {
                 <h1 className="mr-1 text-lg text-center" >{name}</h1>
                 <ul className="ml-5 pb-2">
                     <li>Price: {price}</li>
-                    <li><div className="flex flex-row">Color: {color} <div className={`w-4 h-4 bg-${colorCode} mr-2 rounded-lg`}></div></div></li>
+                    <li><div className="flex flex-row">Color: {color}   <div className={`w-4 h-4 bg-${colorCode} mt-1 rounded-lg`}></div></div></li>
 
                 </ul>
-                <button className='text-lg mr-1 p-2 rounded-lg bg-blue-500 text-white'>Add to cart</button>
+                <button className='text-lg mr-1 p-2 rounded-lg bg-blue-500 text-white' onClick={() => addToCart(color)}>Add to cart</button>
                 <button className="text-lg p-2 rounded-lg bg-gray-400 text-white" onClick={() => moreBtn(url)}>More</button>
 
             </div>
