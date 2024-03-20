@@ -18,7 +18,7 @@ export default function List () {
         <>
             {items.map(item => {
                 return (
-                    < PlantList price={item.price} name={item.name} id={item.id} url={item.url}/> 
+                    < PlantList {...item}/> 
 
                 )
             })}
