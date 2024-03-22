@@ -3,7 +3,7 @@ const price = 4
 
 export const largeTomatos = [
     {
-        id: crypto.randomUUID,
+        id: 1,
         name: "earlygirl",
         price: price,
         url: "https://seedsnsuch.com/products/new-girl-hybrid-tomato-seeds",
@@ -11,7 +11,7 @@ export const largeTomatos = [
         colorCode: "bg-blue-500"
     },
     {
-        id: crypto.randomUUID,
+        id: 2,
         name: "other plant",
         price: price,
         url: "https://en.wikipedia.org/wiki/Tomato",
