@@ -14,7 +14,21 @@ export default function List () {
             return largeTomatos
         })
 
+
     }, [])
+
+    useEffect(() => {
+        const stoaredData = localStorage.getItem("cart")
+        if (stoaredData){
+             localStorage.setItem("cart", JSON.stringify(cart))
+
+            
+        } else {
+            localStorage.setItem("cart", JSON.stringify(cart))
+        }
+
+
+    }, [cart])
 
     
     return(
