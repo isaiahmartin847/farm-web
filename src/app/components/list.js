@@ -7,14 +7,13 @@ import randomKey from "./random-key"
 
 export default function List () {
     const [items, setItems] = useState([])
-    const [cart, setCart] = useState([])
-    const [storage, setStorage] = useState([1, 3])
+    const [cart, setCart] = useState([1])
+    const [storage, setStorage] = useState([])
 
     useEffect(() => {
         setItems(() => {
             return largeTomatos
         })
-        // localStorage.setItem("cart", JSON.stringify(cart))
 
 
     }, [])
@@ -22,21 +21,28 @@ export default function List () {
     useEffect(() => {
         const stoaredData = localStorage.getItem("cart")
         if (stoaredData){
-            setStorage(() => {
-                return JSON.parse(stoaredData)
+            // setStorage(() => {
+            //     return JSON.parse(stoaredData)
+            // })
+            setStorage((cart) => {
+                return [...cart]
             })
-            console.log("succsefully added local stoarge to the hook")
+             localStorage.setItem("cart", JSON.stringify(cart))
+            console.log("stoarge did exist but now i pulled it then spreaded the cart state then pushed the local stoarge again")
+
+            
         } else {
-            console.log("unable to get the local stoarge")
+            localStorage.setItem("cart", JSON.stringify(cart))
+            console.log("cart did not exist in local stoarge but now does")
         }
-        console.log(`stoarage after getting the local storage = ${storage}`)
+
 
     }, [cart])
 
     
     return(
         <>
-            <h1> this is starge = {storage}</h1>
+            {/* <h1> this is starge = {storage}</h1> */}
             {items.map(item => {
                 return (
                     < PlantList key={item.id} {...item} cart={cart} setCart={setCart}/> 
