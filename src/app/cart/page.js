@@ -4,14 +4,23 @@ import NavBar from "../components/nav";
 
 export default function Cart() {
     const [userCart, setUserCart] = useState([])
-    const [cartCount, setCartCount] = useState({})
+    const [cartCount, setCartCount] = useState([])
 
-    useEffect((userCart) => {
+
+
+    useEffect(() => {
         setUserCart(() => {
-            return JSON.parse(localStorage.getItem('cart'))
+            // return JSON.parse(localStorage.getItem('cart'))
+            return [1, 3, 2]
         })
+
     }, [])
 
+
+    useEffect(() => {
+        userCart.forEach(item => console.log(item))
+    }, [userCart])
+    
 
 
     return (
