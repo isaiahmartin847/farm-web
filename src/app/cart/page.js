@@ -28,7 +28,9 @@ export default function Cart() {
 
         
         })
-        console.log(counts)
+        setCartCount(() => {
+            counts
+        })
     }, [userCart])
     
 
