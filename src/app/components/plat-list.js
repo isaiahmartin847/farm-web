@@ -7,8 +7,8 @@ import moreBtn from "./more-btn-function";
 export default function PlantList ({name, id, price, url, color, colorCode, cart, setCart}) {
 
 
-    const haddleClick = (cart, idnum) => {
-        setCart([...cart, idnum])
+    const haddleClick = (cart, itemName) => {
+        setCart([...cart, itemName])
         // console.log(cart)
     }
     
@@ -22,7 +22,7 @@ export default function PlantList ({name, id, price, url, color, colorCode, cart
                     <li ><div className="flex flex-row">Color: {color}   <div className={`w-4 h-4 ${colorCode} mt-1 rounded-lg`}></div></div></li>
 
                 </ul>
-                <button  className='text-lg mr-1 p-2 rounded-lg bg-blue-500 text-white' onClick={() => haddleClick(cart, id)}>Add to cart</button>
+                <button  className='text-lg mr-1 p-2 rounded-lg bg-blue-500 text-white' onClick={() => haddleClick(cart, name)}>Add to cart</button>
                 <button  className="text-lg p-2 rounded-lg bg-gray-400 text-white" onClick={() => moreBtn(url)}>More</button>
             </div>
         </div>
