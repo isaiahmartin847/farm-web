@@ -10,15 +10,25 @@ export default function Cart() {
 
     useEffect(() => {
         setUserCart(() => {
-            // return JSON.parse(localStorage.getItem('cart'))
-            return [1, 3, 2]
+             return JSON.parse(localStorage.getItem('cart'))
+            
         })
 
     }, [])
 
 
     useEffect(() => {
-        userCart.forEach(item => console.log(item))
+        const counts = {}
+        userCart.forEach(item => {
+            if(!counts[item]) {
+                counts[item] = 1
+            } else {
+                counts[item]++ 
+            }
+
+        
+        })
+        console.log(counts)
     }, [userCart])
     
 
