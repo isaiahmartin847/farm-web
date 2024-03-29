@@ -31,12 +31,11 @@ export default function Cart() {
 
 
     const removeItem = (key) => {
-        console.log(`button clicked key: ${key}`)
-        Object.keys(userCart).map(itemKey => {
-            if(itemKey === key){
-                console.log(`found obj ${userCart[key]}`)
-            }
-        })
+        setUserCart(userCart => ({
+            ...userCart,
+            [key]: userCart[key] - 1
+        }))
+
     
     }
 
