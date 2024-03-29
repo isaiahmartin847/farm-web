@@ -13,44 +13,49 @@ export default function Cart() {
 
 
     useEffect(() => {
-        setUserCart(() => {
-             return JSON.parse(localStorage.getItem('cart'))
-            
+        let counter = {}
+        const cartItems = JSON.parse(localStorage.getItem('cart'))
+        cartItems.forEach(item => {
+            if(!counter[item]) {
+                counter[item] = 1
+            } else {
+                counter[item]++
+            }
         })
-
+        setUserCart(() => {
+            return counter
+        })
     }, [])
 
 
-    useEffect(() => {
-        const counts = {}
-        userCart.forEach(item => {
-            if(!counts[item]) {
-                counts[item] = 1
-            } else {
-                counts[item]++ 
-            }
-
-        
-        })
-        // setCartCount(() => {
-        //     counts
-        // })
-        console.log(counts)
-    }, [userCart])
+    // useEffect(() => {
+    //     const counts = {}
+    //     userCart.forEach(item => {
+    //         if(!counts[item]) {
+    //             counts[item] = 1
+    //         } else {
+    //             counts[item]++ 
+    //         }
+    //     })
+    //     setCartCount(() => {
+    //         counts
+    //     })
+    //     console.log(counts)
+    // }, [userCart])
     
 
 
     return (
         <>
             <NavBar />
-            {Object.keys(cartCount).map(key => {
+            {Object.keys(userCart).map(key => {
                 return (
                     <div key={key} className="border mb-4 flex-col justify-center text-center">
                         <h1>Name {key}</h1>
-                        <h2>Count: {cartCount[key]}</h2>
+                        <h2>Count: {userCart[key]}</h2>
                     </div>
                 )
-            })}
+            })}            
         </>
     )
 }
