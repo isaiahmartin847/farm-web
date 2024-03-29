@@ -21,37 +21,31 @@ export default function Cart() {
     }, [])
 
 
-    // useEffect(() => {
-    //     const counts = {}
-    //     userCart.forEach(item => {
-    //         if(!counts[item]) {
-    //             counts[item] = 1
-    //         } else {
-    //             counts[item]++ 
-    //         }
+    useEffect(() => {
+        const counts = {}
+        userCart.forEach(item => {
+            if(!counts[item]) {
+                counts[item] = 1
+            } else {
+                counts[item]++ 
+            }
 
         
-    //     })
-    //     setCartCount(() => {
-    //         counts
-    //     })
-    // }, [userCart])
+        })
+        // setCartCount(() => {
+        //     counts
+        // })
+        console.log(counts)
+    }, [userCart])
     
 
 
     return (
         <>
             <NavBar />
-            {userCart.map(value => {
-                return (
-                    <div key={value}>
-                        <h1>{value}</h1>
-                    </div>
-                )
-            })}
             {Object.keys(cartCount).map(key => {
                 return (
-                    <div key={key}>
+                    <div key={key} className="border mb-4 flex-col justify-center text-center">
                         <h1>Name {key}</h1>
                         <h2>Count: {cartCount[key]}</h2>
                     </div>
