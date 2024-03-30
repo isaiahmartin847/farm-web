@@ -30,7 +30,7 @@ export default function Cart() {
     }, [])
 
 
-    const removeItem = (key) => {
+    const decermentItem  = (key) => {
         if(userCart[key] === 1) {
             console.log("key already has only one")
             const newCart = {...userCart}
@@ -44,6 +44,12 @@ export default function Cart() {
         }
     }
 
+
+    const removeItem = (key) => {
+        const tempCart = {...userCart}
+        delete tempCart[key]
+        setUserCart(tempCart) 
+    }
     return (
         <>
             <NavBar />
@@ -52,7 +58,8 @@ export default function Cart() {
                     <div key={key} className="border mb-4 flex-col justify-center text-center">
                         <h1>Name: {key}</h1>
                         <h2>Count: {userCart[key]}</h2>
-                        <button className="bg-red-500 rounded p-1" onClick={() => {removeItem(key)}}>remove</button>
+                        <button className="bg-red-500 rounded p-1 mr-1" onClick={() => {decermentItem(key)}}>remove One</button>
+                        <button className="bg-red-500 rounded p-1" onClick={() => {removeItem(key)}}>Remove All</button>
                     </div>
                 )
             })}            
