@@ -31,12 +31,17 @@ export default function Cart() {
 
 
     const removeItem = (key) => {
-        setUserCart(userCart => ({
-            ...userCart,
-            [key]: userCart[key] - 1
-        }))
-
-    
+        if(userCart[key] === 1) {
+            console.log("key already has only one")
+            const newCart = {...userCart}
+            delete newCart[key]
+            setUserCart(newCart)
+        } else {
+            setUserCart(userCart => ({
+                ...userCart,
+                [key]: userCart[key] - 1
+            }))
+        }
     }
 
     return (
