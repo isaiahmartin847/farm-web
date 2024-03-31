@@ -24,9 +24,8 @@ export default function Cart() {
             setUserCart(() => {
                 return counter
             })
-            localStorage.removeItem("cart")
+            // localStorage.removeItem("cart")
         }
-
     }, [])
 
 

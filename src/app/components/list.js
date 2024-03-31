@@ -19,10 +19,10 @@ export default function List () {
 
     useEffect(() => {
         const stoaredData = localStorage.getItem("cart")
+        console.log(stoaredData)
         if (stoaredData){
-             localStorage.setItem("cart", JSON.stringify(cart))
-
             
+             localStorage.setItem("cart", JSON.stringify(cart))     
         } else {
             localStorage.setItem("cart", JSON.stringify(cart))
         }
