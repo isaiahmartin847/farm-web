@@ -14,21 +14,26 @@ export default function List () {
             return largeTomatos
         })
 
-
     }, [])
 
     useEffect(() => {
-        const stoaredData = localStorage.getItem("cart")
-        console.log(stoaredData)
+        const stoaredData = JSON.parse(localStorage.getItem("cart"))
         if (stoaredData){
+            // take data from local storage and set it to cart\
+            console.log(stoaredData)
+            setCart((cart) => {
+                return [...cart, ...stoaredData]
+            })
 
-            localStorage.setItem("cart", JSON.stringify(cart))     
+            
         } else {
-            localStorage.setItem("cart", JSON.stringify(cart))
+            // create a new local storage item named cart and set the value to cart 
+            console.log("no cart found")
         }
+       
 
-
-    }, [cart])
+        console.log(`cart: ${cart}`)
+    }, [])
 
     
     return(
@@ -42,3 +47,7 @@ export default function List () {
         </>
     )
 }
+
+
+
+
