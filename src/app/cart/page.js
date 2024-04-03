@@ -31,7 +31,6 @@ export default function Cart() {
 
     const decermentItem  = (key) => {
         if(userCart[key] === 1) {
-            console.log("key already has only one")
             const newCart = {...userCart}
             delete newCart[key]
             setUserCart(newCart)

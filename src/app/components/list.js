@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import { largeTomatos } from "../plant-data"
 import PlantList from "./plat-list"
-import randomKey from "./random-key"
+// import randomKey from "./random-key"
 
 export default function List () {
     const [items, setItems] = useState([])
@@ -21,8 +21,8 @@ export default function List () {
         const stoaredData = localStorage.getItem("cart")
         console.log(stoaredData)
         if (stoaredData){
-            
-             localStorage.setItem("cart", JSON.stringify(cart))     
+
+            localStorage.setItem("cart", JSON.stringify(cart))     
         } else {
             localStorage.setItem("cart", JSON.stringify(cart))
         }
@@ -36,7 +36,6 @@ export default function List () {
             {items.map(item => {
                 return (
                     < PlantList key={item.id} {...item} cart={cart} setCart={setCart}/> 
-
                 )
             })}
             
