@@ -10,17 +10,15 @@ export default function List () {
     const [cart, setCart] = useState([])
 
     useEffect(() => {
+        const stoaredData = JSON.parse(localStorage.getItem("cart"))
+        //set the items to the data base
         setItems(() => {
             return largeTomatos
         })
 
-    }, [])
-
-    useEffect(() => {
-        const stoaredData = JSON.parse(localStorage.getItem("cart"))
+        //seting the cart to the local storage items
         if (stoaredData){
             // take data from local storage and set it to cart\
-            console.log(stoaredData)
             setCart((cart) => {
                 return [...cart, ...stoaredData]
             })
@@ -29,13 +27,14 @@ export default function List () {
         } else {
             // create a new local storage item named cart and set the value to cart 
             console.log("no cart found")
+            localStorage.setItem("cart", JSON.stringify([]))
         }
-       
 
-        console.log(`cart: ${cart}`)
+
     }, [])
 
-    
+
+
     return(
         <>
             {items.map(item => {
