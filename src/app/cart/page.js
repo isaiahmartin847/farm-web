@@ -1,6 +1,7 @@
 "use client"
 import { useEffect, useState } from "react";
 import NavBar from "../components/nav";
+import EmptyCart from "../components/empty-cart";
 
 export default function Cart() {
     const [cart, setcart] = useState({})
@@ -44,10 +45,10 @@ export default function Cart() {
         <>
             <NavBar />
             
-            {Object.entries(cart).length !== 0 ? (
-                <h1>true</h1>
-            ) : (
-                <h1>false</h1>
+            {Object.entries(cart).length === 0 ? (
+                <EmptyCart></EmptyCart>
+            ): (
+                <h1></h1>
             )}
 
             {Object.keys(cart).map(key => {
