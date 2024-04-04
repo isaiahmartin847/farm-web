@@ -47,6 +47,7 @@ export default function List () {
                     < PlantList key={item.id} {...item} cart={cart} setCart={setCart}/> 
                 )
             })}
+            <Title title={"Small tomatos"}></Title>
             
         </>
     )
