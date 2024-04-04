@@ -40,6 +40,7 @@ export default function List () {
 
     return(
         <>
+
             {items.map(item => {
                 return (
                     < PlantList key={item.id} {...item} cart={cart} setCart={setCart}/> 

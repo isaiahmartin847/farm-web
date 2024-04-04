@@ -43,6 +43,13 @@ export default function Cart() {
     return (
         <>
             <NavBar />
+            
+            {Object.entries(cart).length !== 0 ? (
+                <h1>true</h1>
+            ) : (
+                <h1>false</h1>
+            )}
+
             {Object.keys(cart).map(key => {
                 return (
                     <div key={key} className="border mb-4 flex-col justify-center text-center">
