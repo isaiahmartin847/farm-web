@@ -8,8 +8,16 @@ export default function PlantList ({name, id, price, url, color, colorCode, cart
 
 
     const haddleClick = (cart, itemName) => {
-        setCart([...cart, itemName])
-        // console.log(cart)
+        if (cart[itemName]){
+            setCart((cart) => {
+                return {...cart, [itemName]: cart[itemName] + 1 }
+            })
+            return
+        }
+        setCart((cart) => {
+            return {...cart, [itemName]: 1}
+        })
+
     }
     
   

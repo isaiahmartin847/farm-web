@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import NavBar from "../components/nav";
 
 export default function Cart() {
-    const [userCart, setUserCart] = useState([])
+    const [userCart, setUserCart] = useState({})
 
 
 
