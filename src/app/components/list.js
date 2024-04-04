@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 import { largeTomatos } from "../plant-data"
 import PlantList from "./plat-list"
+import Title from "./title"
 // import randomKey from "./random-key"
 
 export default function List () {
@@ -40,7 +41,7 @@ export default function List () {
 
     return(
         <>
-
+            <Title title={"Larg tomatos"}></Title>
             {items.map(item => {
                 return (
                     < PlantList key={item.id} {...item} cart={cart} setCart={setCart}/> 

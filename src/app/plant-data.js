@@ -19,3 +19,16 @@ export const largeTomatos = [
         colorCode: "bg-red-500"
     }
 ]
+
+
+
+export const smallTomatos = [
+    {
+        id: crypto.randomUUID(),
+        name: "small tomato",
+        price: price,
+        url: "https://google.com",
+        color: "yellow",
+        colorCode: "bg-yellow-400"
+    }
+]
