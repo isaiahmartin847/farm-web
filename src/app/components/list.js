@@ -29,9 +29,12 @@ export default function List () {
             console.log("no cart found")
             localStorage.setItem("cart", JSON.stringify([]))
         }
-
-
     }, [])
+
+
+    useEffect(() => {
+        localStorage.setItem("cart", JSON.stringify(cart))
+    }, [cart])
 
 
 
