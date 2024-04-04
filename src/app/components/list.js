@@ -7,31 +7,28 @@ import PlantList from "./plat-list"
 
 export default function List () {
     const [items, setItems] = useState([])
-    const [cart, setCart] = useState({earlygirl: 1})
+    const [cart, setCart] = useState({})
 
     useEffect(() => {
-        // const stoaredData = JSON.parse(localStorage.getItem("cart"))
+         const stoaredData = JSON.parse(localStorage.getItem("cart"))
         //set the items to the data base
         setItems(() => {
             return largeTomatos
         })
 
-/*
+
         if (stoaredData){
-            
+            console.log(JSON.stringify(stoaredData))
             setCart((cart) => {
-                return [...cart, ...stoaredData]
+                return {...cart ,...stoaredData}
             })
-
-            
+  
         } else {
-            
-            console.log("no cart found")
-            localStorage.setItem("cart", JSON.stringify([]))
+            localStorage.setItem("cart", JSON.stringify({}))
         }
-*/
 
-        console.log(`cart: ${cart.earlygirl}`)
+
+        
     }, [])
 
 
