@@ -45,13 +45,13 @@ export default function List () {
 
     return(
         <>
-            <Title title={"Larg tomatos"}></Title>
+            <Title title={"Main Slicing Tomatoes"}></Title>
             {items.map(item => {
                 return (
                     < PlantList key={item.id} {...item} cart={cart} setCart={setCart}/> 
                 )
             })}
-            <Title title={"Small tomatos"}></Title>
+            <Title title={"Small-Fruited Tomatoes"}></Title>
             {smallTomatosState.map(item => {
                 return (
                     < PlantList key={item.id} {...item} cart={cart} setCart={setCart}/> 
