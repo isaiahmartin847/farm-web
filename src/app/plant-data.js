@@ -43,23 +43,7 @@ export const largeTomatos = [
         color: "Red Square",
         colorCode: "bg-red-500"
     },
-    {
-        id: crypto.randomUUID(),
-        name: "",
-        price: price,
-        url: "",
-        color: "",
-        colorCode: ""
-    },
-    {
-        id: crypto.randomUUID(),
-        name: "",
-        price: price,
-        url: "",
-        color: "",
-        colorCode: ""
-    },
-     
+
 ]
 
 
