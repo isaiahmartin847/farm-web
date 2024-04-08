@@ -1,10 +1,11 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { Suspense, useEffect, useState } from "react"
 import { largeTomatoes, peppers, peppersData, smallTomatoes } from "../plant-data"
 import PlantList from "./plat-list"
 import Title from "./title"
-// import randomKey from "./random-key"
+import Loading from "./loading"
+
 
 export default function List () {
     const [items, setItems] = useState([])
