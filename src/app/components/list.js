@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { largeTomatos, smallTomatos } from "../plant-data"
+import { largeTomatoes, smallTomatoes } from "../plant-data"
 import PlantList from "./plat-list"
 import Title from "./title"
 // import randomKey from "./random-key"
@@ -9,16 +9,16 @@ import Title from "./title"
 export default function List () {
     const [items, setItems] = useState([])
     const [cart, setCart] = useState({})
-    const [smallTomatosState, setSmallTomatos] = useState([])
+    const [smallTomatoesState, setSmallTomatos] = useState([])
 
     useEffect(() => {
          const stoaredData = JSON.parse(localStorage.getItem("cart"))
         //set the items to the data base
         setItems(() => {
-            return largeTomatos
+            return largeTomatoes
         })
         setSmallTomatos(() => {
-            return smallTomatos
+            return smallTomatoes
         })
 
 
@@ -52,7 +52,7 @@ export default function List () {
                 )
             })}
             <Title title={"Small-Fruited Tomatoes"}></Title>
-            {smallTomatosState.map(item => {
+            {smallTomatoesState.map(item => {
                 return (
                     < PlantList key={item.id} {...item} cart={cart} setCart={setCart}/> 
                 )
