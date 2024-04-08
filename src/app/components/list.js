@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { largeTomatoes, smallTomatoes } from "../plant-data"
+import { largeTomatoes, peppers, peppersData, smallTomatoes } from "../plant-data"
 import PlantList from "./plat-list"
 import Title from "./title"
 // import randomKey from "./random-key"
@@ -9,23 +9,28 @@ import Title from "./title"
 export default function List () {
     const [items, setItems] = useState([])
     const [cart, setCart] = useState({})
-    const [smallTomatoesState, setSmallTomatos] = useState([])
+    const [smallTomatoesState, setSmallTomatoes] = useState([])
+    const [peppers, setPeppers] = useState([])
+
 
     useEffect(() => {
-         const stoaredData = JSON.parse(localStorage.getItem("cart"))
+         const storedData = JSON.parse(localStorage.getItem("cart"))
         //set the items to the data base
         setItems(() => {
             return largeTomatoes
         })
-        setSmallTomatos(() => {
+        setSmallTomatoes(() => {
             return smallTomatoes
+        })
+        setPeppers(() => {
+            return peppersData
         })
 
 
-        if (stoaredData){
-            console.log(JSON.stringify(stoaredData))
+        if (storedData){
+            console.log(JSON.stringify(storedData))
             setCart((cart) => {
-                return {...cart ,...stoaredData}
+                return {...cart ,...storedData}
             })
   
         } else {
@@ -53,6 +58,12 @@ export default function List () {
             })}
             <Title title={"Small-Fruited Tomatoes"}></Title>
             {smallTomatoesState.map(item => {
+                return (
+                    < PlantList key={item.id} {...item} cart={cart} setCart={setCart}/> 
+                )
+            })}
+            <Title title={"peppers"}></Title>
+            {peppers.map(item => {
                 return (
                     < PlantList key={item.id} {...item} cart={cart} setCart={setCart}/> 
                 )

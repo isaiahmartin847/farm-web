@@ -2,7 +2,7 @@
 const price = 4
 
 
-export const peppers = [
+export const peppersData = [
     {
         id: crypto.randomUUID(),
         name: "Helios",
