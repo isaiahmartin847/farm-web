@@ -1,10 +1,10 @@
 "use client"
 
-import { Suspense, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { largeTomatoes, peppers, peppersData, smallTomatoes } from "../plant-data"
 import PlantList from "./plat-list"
 import Title from "./title"
-import Loading from "./loading"
+
 
 
 export default function List () {

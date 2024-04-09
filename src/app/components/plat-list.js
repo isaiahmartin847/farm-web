@@ -27,7 +27,7 @@ export default function PlantList ({name, id, price, url, color, colorCode, cart
                 <h1  className="mr-1 text-lg text-center" >Name: {name}</h1>
                 <ul  className="ml-5 pb-2">
                     <li >Price: {price}</li>
-                    <li ><div className="flex flex-row">Color: {color}   <div className={`w-4 h-4 ${colorCode} mt-1 rounded-lg`}></div></div></li>
+                    <li ><div className="flex flex-row">Color: {color}   <div className={` h-4 w-4 rounded-lg ${colorCode} mt-1 ml-1`}></div></div></li>
 
                 </ul>
                 <button  className='text-lg mr-1 p-2 rounded-lg bg-blue-500 text-white' onClick={() => handleClick(cart, name)}>Add to cart</button>
