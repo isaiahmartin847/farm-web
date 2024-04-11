@@ -80,7 +80,10 @@ export default function List () {
         <>
 
             {isLoading ? (
+                <>
                 <div>loading.....</div>
+                <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-blue-500"></div>
+                </>
             ) : (
                 <div>
                 <Title title={"Main Slicing Tomatoes"}></Title>
@@ -103,24 +106,6 @@ export default function List () {
                 })}
                 </div>
             )}
-            {/* <Title title={"Main Slicing Tomatoes"}></Title>
-            {largeTomatoes.map(item => {
-                return (
-                    < PlantList key={item.id} {...item} cart={cart} setCart={setCart}/> 
-                )
-            })}
-            <Title title={"Small-Fruited Tomatoes"}></Title>
-            {smallTomatoesState.map(item => {
-                return (
-                    < PlantList key={item.id} {...item} cart={cart} setCart={setCart}/> 
-                )
-            })}
-            <Title title={"peppers"}></Title>
-            {peppers.map(item => {
-                return (
-                    < PlantList key={item.id} {...item} cart={cart} setCart={setCart}/> 
-                )
-            })} */}
             
         </>
     )
