@@ -50,7 +50,7 @@ export default function List () {
                 console.error(`failed to fetch the data ${err}`);
             }
 
-            setIsLoading(false)
+            setIsLoading(true)
          }
 
          getPlantData()
@@ -80,10 +80,12 @@ export default function List () {
         <>
 
             {isLoading ? (
-                <>
-                <div>loading.....</div>
-                <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-blue-500"></div>
-                </>
+                <div>
+                    <div className="flex text-center justify-center mt-[30vh]">
+                        <div class="border-gray-300 h-20 w-20 animate-spin rounded-full border-8 border-t-blue-500"/> 
+                    </div>
+                    <h1 className="text-center">Loading...</h1>
+                </div>
             ) : (
                 <div>
                 <Title title={"Main Slicing Tomatoes"}></Title>
