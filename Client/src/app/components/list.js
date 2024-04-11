@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { largeTomatoes, peppers, peppersData, smallTomatoes } from "../plant-data"
 import PlantList from "./plat-list"
 import Title from "./title"
 
@@ -17,16 +16,6 @@ export default function List () {
     useEffect(() => {
          const storedData = JSON.parse(localStorage.getItem("cart"))
         //set the items to the data base
-        setItems(() => {
-            return largeTomatoes
-        })
-        setSmallTomatoes(() => {
-            return smallTomatoes
-        })
-        setPeppers(() => {
-            return peppersData
-        })
-
 
         if (storedData){
             console.log(JSON.stringify(storedData))
