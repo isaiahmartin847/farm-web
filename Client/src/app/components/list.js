@@ -7,15 +7,53 @@ import Title from "./title"
 
 
 export default function List () {
-    const [items, setItems] = useState([])
-    const [cart, setCart] = useState({})
+    const [largeTomatoes, setLargeTomatoes] = useState([])
     const [smallTomatoesState, setSmallTomatoes] = useState([])
     const [peppers, setPeppers] = useState([])
+    const [cart, setCart] = useState({})
+    const [isLoading, setIsLoading] = useState(true)
 
 
     useEffect(() => {
          const storedData = JSON.parse(localStorage.getItem("cart"))
-        //set the items to the data base
+         const getPlantData = async () => {
+            try {
+                
+                setIsLoading(true)
+                
+                const [largeTomatoesRes, smallTomatoesRes, pepperRes] = await Promise.all([
+                    fetch('http://localhost:8080/api/tomato/large'),
+                    fetch('http://localhost:8080/api/tomato/small'),
+                    fetch('http://localhost:8080/api/pepper'),
+                ])
+
+
+                const largeTomatoesData = await largeTomatoesRes.json()
+                const smallTomatoesData = await smallTomatoesRes.json()
+                const pepperData = await pepperRes.json()
+
+
+                setLargeTomatoes(() => {
+                    return largeTomatoesData.largeTomatoes
+                })
+                setSmallTomatoes(() => {
+                    return smallTomatoesData.smallTomatoes
+                })
+                setPeppers(() => {
+                    return pepperData.peppersData
+                })
+
+                console.log("done loading")
+
+
+            } catch (err) {
+                console.error(`failed to fetch the data ${err}`);
+            }
+
+            setIsLoading(false)
+         }
+
+         getPlantData()
 
         if (storedData){
             console.log(JSON.stringify(storedData))
@@ -40,8 +78,33 @@ export default function List () {
 
     return(
         <>
-            <Title title={"Main Slicing Tomatoes"}></Title>
-            {items.map(item => {
+
+            {isLoading ? (
+                <div>loading.....</div>
+            ) : (
+                <div>
+                <Title title={"Main Slicing Tomatoes"}></Title>
+                {largeTomatoes.map(item => {
+                    return (
+                        < PlantList key={item.id} {...item} cart={cart} setCart={setCart}/> 
+                    )
+                })}
+                <Title title={"Small-Fruited Tomatoes"}></Title>
+                {smallTomatoesState.map(item => {
+                    return (
+                        < PlantList key={item.id} {...item} cart={cart} setCart={setCart}/> 
+                    )
+                })}
+                <Title title={"peppers"}></Title>
+                {peppers.map(item => {
+                    return (
+                        < PlantList key={item.id} {...item} cart={cart} setCart={setCart}/> 
+                    )
+                })}
+                </div>
+            )}
+            {/* <Title title={"Main Slicing Tomatoes"}></Title>
+            {largeTomatoes.map(item => {
                 return (
                     < PlantList key={item.id} {...item} cart={cart} setCart={setCart}/> 
                 )
@@ -57,7 +120,7 @@ export default function List () {
                 return (
                     < PlantList key={item.id} {...item} cart={cart} setCart={setCart}/> 
                 )
-            })}
+            })} */}
             
         </>
     )
