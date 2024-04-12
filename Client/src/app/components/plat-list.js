@@ -6,7 +6,7 @@ import moreBtn from "./more-btn-function";
 
 export default function PlantList ({name, id, price, url, color, colorCode, cart, setCart}) {
 
-
+    console.log(`this is a plant |${colorCode}|`)
     const handleClick = (cart, itemName) => {
         if (cart[itemName]){
             setCart((cart) => {

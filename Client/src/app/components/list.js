@@ -50,7 +50,7 @@ export default function List () {
                 console.error(`failed to fetch the data ${err}`);
             }
 
-            setIsLoading(true)
+            setIsLoading(false)
          }
 
          getPlantData()
