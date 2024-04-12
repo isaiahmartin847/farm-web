@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import PlantList from "./plat-list"
+import Plant from "./plat"
 import Title from "./title"
 
 
@@ -43,7 +43,6 @@ export default function List () {
                     return pepperData.peppersData
                 })
 
-                console.log("done loading")
 
 
             } catch (err) {
@@ -56,7 +55,6 @@ export default function List () {
          getPlantData()
 
         if (storedData){
-            console.log(JSON.stringify(storedData))
             setCart((cart) => {
                 return {...cart ,...storedData}
             })
@@ -82,7 +80,7 @@ export default function List () {
             {isLoading ? (
                 <div>
                     <div className="flex text-center justify-center mt-[30vh]">
-                        <div class="border-gray-300 h-20 w-20 animate-spin rounded-full border-8 border-t-blue-500"/> 
+                        <div className="border-gray-300 h-20 w-20 animate-spin rounded-full border-8 border-t-blue-500"/> 
                     </div>
                     <h1 className="text-center">Loading...</h1>
                 </div>
@@ -91,19 +89,19 @@ export default function List () {
                 <Title title={"Main Slicing Tomatoes"}></Title>
                 {largeTomatoes.map(item => {
                     return (
-                        < PlantList key={item.id} {...item} cart={cart} setCart={setCart}/> 
+                        < Plant key={item.id} {...item} cart={cart} setCart={setCart}/> 
                     )
                 })}
                 <Title title={"Small-Fruited Tomatoes"}></Title>
                 {smallTomatoesState.map(item => {
                     return (
-                        < PlantList key={item.id} {...item} cart={cart} setCart={setCart}/> 
+                        < Plant key={item.id} {...item} cart={cart} setCart={setCart}/> 
                     )
                 })}
                 <Title title={"peppers"}></Title>
                 {peppers.map(item => {
                     return (
-                        < PlantList key={item.id} {...item} cart={cart} setCart={setCart}/> 
+                        < Plant key={item.id} {...item} cart={cart} setCart={setCart}/> 
                     )
                 })}
                 </div>

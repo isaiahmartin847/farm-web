@@ -4,9 +4,8 @@ import addToCart from "./add-to-cart-function";
 import moreBtn from "./more-btn-function";
 
 
-export default function PlantList ({name, id, price, url, color, colorCode, cart, setCart}) {
+export default function Plant ({name, id, price, url, color, colorCode, cart, setCart}) {
 
-    console.log(`this is a plant |${colorCode}|`)
     const handleClick = (cart, itemName) => {
         if (cart[itemName]){
             setCart((cart) => {
@@ -26,7 +25,7 @@ export default function PlantList ({name, id, price, url, color, colorCode, cart
             <div  className="m-0.5 p-3">
                 <h1  className="mr-1 text-lg text-center" >Name: {name}</h1>
                 <ul  className="ml-5 pb-2">
-                    <li >Price: {price}</li>
+                    <li >Price: {`$${price}`}</li>
                     <li ><div className="flex flex-row">Color: {color}   <div className={` h-4 w-4 rounded-lg ${colorCode} mt-1 ml-1`}></div></div></li>
 
                 </ul>
