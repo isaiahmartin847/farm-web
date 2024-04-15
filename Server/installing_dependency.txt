@@ -4,5 +4,8 @@ set up
 3: npm i nodemon --save-dev
 4: npm i cors
 
+--- 
+to install mysql 
+1: run npm install mysql 
 
 To run just go into the server dir and type in npm run dev
