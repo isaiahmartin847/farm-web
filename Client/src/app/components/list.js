@@ -21,16 +21,18 @@ export default function List () {
                 
                 setIsLoading(true)
                 
-                const [largeTomatoesRes, smallTomatoesRes, pepperRes] = await Promise.all([
+                const [largeTomatoesRes, smallTomatoesRes, pepperRes, testRes] = await Promise.all([
                     fetch('http://localhost:8080/api/tomato/large'),
                     fetch('http://localhost:8080/api/tomato/small'),
                     fetch('http://localhost:8080/api/pepper'),
+                    fetch('http://localhost:8080/plants')
                 ])
 
 
                 const largeTomatoesData = await largeTomatoesRes.json()
                 const smallTomatoesData = await smallTomatoesRes.json()
                 const pepperData = await pepperRes.json()
+                const testData = await  testRes.json()
 
 
                 setLargeTomatoes(() => {
@@ -42,6 +44,7 @@ export default function List () {
                 setPeppers(() => {
                     return pepperData.peppersData
                 })
+                console.log(testData)
 
 
 
