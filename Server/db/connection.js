@@ -1,12 +1,14 @@
 // db/connection.js
 const mysql = require('mysql');
+require("dotenv").config()
+
 
 // Create a MySQL pool
 const pool = mysql.createPool({
   connectionLimit: 100, 
   host: 'localhost',
   user: 'root',
-  password: '',
+  password: process.env.mysql_password,
   database: 'test_cart'
 });
 

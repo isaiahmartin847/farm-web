@@ -2,7 +2,7 @@
 express = require('express')
 const router = express.Router()
 const plantsController = require('../controllers/plantsController'); 
-// const router = require('./UserRouts');
+
 
 
 router.get('', (req, res) => {
