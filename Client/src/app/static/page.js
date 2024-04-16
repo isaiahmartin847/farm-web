@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import ShowPlant from "../components/show_plant"
+import Loading from "../components/loading"
 
 
 
@@ -35,7 +36,7 @@ export default function Static ()  {
         )
     } else {
         return (
-            <h1>data does not exist</h1>
+            <Loading />
         )
     }
 } 
