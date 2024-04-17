@@ -47,6 +47,36 @@ ADD COLUMN days INT;
 SELECT * FROM plantData
 
 
+-- @block
+-- this will pull all the cherry tomatoes 
+SELECT * FROM plantData 
+WHERE species = "tomato" 
+AND in_stock = 1
+AND type = "cherry";
 
 
+-- @block
+-- this will get all the large tomatoes 
+SELECT * FROM plantData
+WHERE species = "tomato"
+and in_stock = 1
+AND type = "large"
+
+
+-- @block
+-- this will get all the hot peppers 
+SELECT * FROM plantData
+WHERE species = "pepper"
+AND in_stock = 1
+AND type = "hot";
+
+-- @block 
+-- this will get all the sweet peppers 
+SELECT * FROM plantData
+WHERE species = "pepper"
+AND in_stock = 1
+AND type = "sweet";
+
+
+-- @block 
 
