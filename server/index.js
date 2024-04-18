@@ -4,7 +4,7 @@ const express = require("express")
 const cors = require("cors")
 const app = express()
 const PORT = 8080
-const userRouter = require('./routes/UserRouts')
+// const userRouter = require('./routes/UserRouts')
 const plantRouter = require('./routes/plantRouts')
 
 //current plant data
@@ -12,7 +12,6 @@ const { largeTomatoes, smallTomatoes, peppersData } = require('./plant_data')
 
 app.use(cors())
 
-app.use('/test', userRouter);
 app.use('/plants', plantRouter);
 
 app.get("/api/tomato/large", (req, res) => {

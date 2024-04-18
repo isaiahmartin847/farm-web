@@ -5,7 +5,7 @@ const db = require('../db/connection');
 const getPlants = (callback) => {
     db.query('SELECT * FROM plantData WHERE in_stock = 1', (error, results) => {
         if (error) {
-            callback('error acured during query', null)
+            callback(500, 'error acured during query')
             return
         }
         callback(null,  results)

@@ -1,11 +1,9 @@
-"use client"
-import { useState } from "react";
-import addToCart from "./add-to-cart-function";
+
 import moreBtn from "./more-btn-function";
 import Price from "./price";
 
 
-export default function Plant ({name, id, price, url, color, colorCode, cart, setCart}) {
+export default function Plant ({name, price, url, color, colorCode, cart, setCart}) {
     
 
     const handleClick = (cart, itemName) => {

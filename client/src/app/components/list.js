@@ -8,50 +8,30 @@ import Loading from "./loading"
 
 
 export default function List () {
-    const [largeTomatoes, setLargeTomatoes] = useState([])
-    const [smallTomatoesState, setSmallTomatoes] = useState([])
-    const [peppers, setPeppers] = useState([])
-    const [cart, setCart] = useState({})
+    const [plants, setPlants] = useState(null)
+    const [largeTomatoes, setLargeTomatoes] = useState({})
+    const [smallTomatoesState, setSmallTomatoes] = useState(null)
+    const [peppers, setPeppers] = useState(null)
+    const [cart, setCart] = useState(null)
     const [isLoading, setIsLoading] = useState(true)
 
 
     useEffect(() => {
          const storedData = JSON.parse(localStorage.getItem("cart"))
-         const getPlantData = async () => {
-            try {
-                
-                setIsLoading(true)
-                
-                const [largeTomatoesRes, smallTomatoesRes, pepperRes, testRes] = await Promise.all([
-                    fetch('http://localhost:8080/api/tomato/large'),
-                    fetch('http://localhost:8080/api/tomato/small'),
-                    fetch('http://localhost:8080/api/pepper'),
-                    fetch('http://localhost:8080/plants')
-                ])
-
-
-                const largeTomatoesData = await largeTomatoesRes.json()
-                const smallTomatoesData = await smallTomatoesRes.json()
-                const pepperData = await pepperRes.json()
-                const testData = await  testRes.json()
-
-
-                setLargeTomatoes(() => {
-                    return largeTomatoesData.largeTomatoes
-                })
-                setSmallTomatoes(() => {
-                    return smallTomatoesData.smallTomatoes
-                })
-                setPeppers(() => {
-                    return pepperData.peppersData
-                })
-                console.log(testData)
-
-
-
-            } catch (err) {
-                console.error(`failed to fetch the data ${err}`);
-            }
+         const getPlantData =  () => {
+            fetch('http://localhost:8080/plants')
+            .then(response => {
+                if(!response.ok){
+                    throw new Error("network error for fetching the data")
+                }
+                return response.json()
+            })
+            .then(data => {
+                console.log(data)
+            })
+            .catch(error => {
+                console.log(`there was on error ${error}`)
+            })
 
             setIsLoading(false)
          }
@@ -77,39 +57,45 @@ export default function List () {
     }, [cart])
 
 
+    if(true) {
+        return (
+            <h1>testing</h1>
+        )
+    } else {
 
-    return(
-        <>
+    
+        return(
+            <>
 
-            {isLoading ? (
-                <Loading />
-            ) : (
-                <div>
-                <Title title={"Main Slicing Tomatoes"}></Title>
-                {largeTomatoes.map(item => {
-                    return (
-                        < Plant key={item.id} {...item} cart={cart} setCart={setCart}/> 
-                    )
-                })}
-                <Title title={"Small-Fruited Tomatoes"}></Title>
-                {smallTomatoesState.map(item => {
-                    return (
-                        < Plant key={item.id} {...item} cart={cart} setCart={setCart}/> 
-                    )
-                })}
-                <Title title={"peppers"}></Title>
-                {peppers.map(item => {
-                    return (
-                        < Plant key={item.id} {...item} cart={cart} setCart={setCart}/> 
-                    )
-                })}
-                </div>
-            )}
-            
-        </>
-    )
+                {isLoading ? (
+                    <Loading />
+                ) : (
+                    <div>
+                    <Title title={"Main Slicing Tomatoes"}></Title>
+                    {largeTomatoes.map(item => {
+                        return (
+                            < Plant key={item.id} {...item} cart={cart} setCart={setCart}/> 
+                        )
+                    })}
+                    <Title title={"Small-Fruited Tomatoes"}></Title>
+                    {smallTomatoesState.map(item => {
+                        return (
+                            < Plant key={item.id} {...item} cart={cart} setCart={setCart}/> 
+                        )
+                    })}
+                    <Title title={"peppers"}></Title>
+                    {peppers.map(item => {
+                        return (
+                            < Plant key={item.id} {...item} cart={cart} setCart={setCart}/> 
+                        )
+                    })}
+                    </div>
+                )}
+
+            </>
+        )
+    }
 }
-
 
 
 
