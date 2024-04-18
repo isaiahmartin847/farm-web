@@ -28,9 +28,6 @@ app.get("/api/pepper", (req, res) => {
 })
 
 
-
-
-
 app.listen(PORT, () => {
     console.log(`Jarvis is live at ${PORT}`)
 })
