@@ -16,5 +16,10 @@ router.get('', (req, res) => {
 });
 
 
+router.get('/cherry', (req, res) => {
+    
+})
+
+
 
 module.exports = router

@@ -28,7 +28,7 @@ export default function Plant ({name, id, price, url, color, colorCode, cart, se
                     <div className="ml-10">
                         <h1  className="mr-1 text-lg" >Name: {name}</h1>                    
                         <ul  className="ml-5 pb-2">
-                            <Price price={4.1}/>
+                            <Price price={price}/>
                             <li ><div className="flex flex-row">Color: {color}   <div className={` h-4 w-4 ${colorCode} rounded-lg bg-blue-200 mt-1 ml-1`}></div></div></li>
                             <li>description: N/A</li>
                         </ul>
