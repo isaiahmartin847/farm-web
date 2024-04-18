@@ -6,7 +6,7 @@ export default function NavBar () {
                     <h1 className="font-extrabold text-xl">Covenant Gardens</h1>
                 </div>
                 <div className="flex items-center mr-[1vw] text-white">
-                    <a href="/cart" className="bg-blue-800 px-5 py-2 rounded mr-3">Cart</a>
+                    <a href="/list" className="bg-blue-800 px-5 py-2 rounded mr-3">Your list</a>
                     <a href="/" className="bg-blue-800 px-5 py-2 rounded">Home</a>
                 </div>
             </div>

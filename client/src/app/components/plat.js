@@ -34,7 +34,7 @@ export default function Plant ({name, id, price, url, color, colorCode, cart, se
                         </ul>
                     </div>
                     <div className="text-center">
-                        <button  className='text-lg mr-1 p-2 rounded-lg bg-blue-500 text-white' onClick={() => handleClick(cart, name)}>Add to cart</button>
+                        <button  className='text-lg mr-1 p-2 rounded-lg bg-blue-500 text-white' onClick={() => handleClick(cart, name)}>Add to list</button>
                         <button  className="text-lg p-2 rounded-lg bg-gray-400 text-white" onClick={() => moreBtn(url)}>More</button>
                     </div>
                 </div>
