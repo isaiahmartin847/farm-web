@@ -3,7 +3,7 @@ const db = require('../db/connection');
 
 
 const getPlants = (callback) => {
-    db.query('SELECT * FROM plants', (error, results) => {
+    db.query('SELECT * FROM plantData', (error, results) => {
         if (error) {
             callback('error acured during query', null)
             return

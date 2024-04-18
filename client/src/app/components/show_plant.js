@@ -1,7 +1,7 @@
 import Price from "./price"
 
 
-export default function ShowPlant ({name, type, species, price, description}) {
+export default function ShowPlant ({name, type, species, price, color, colorCode, description}) {
 
     
   
@@ -11,9 +11,9 @@ export default function ShowPlant ({name, type, species, price, description}) {
                 <div className="ml-10">
                     <h1  className="mr-1 text-lg" >Name: {name}</h1>                    
                     <ul  className="ml-5 pb-2">
-                        <Price price={4.1}/>
-                        <li ><div className="flex flex-row">Color: blue   <div className={` h-4 w-4 bg-blue-500 rounded-lg bg-blue-200 mt-1 ml-1`}></div></div></li>
-                        <li>description: N/A</li>
+                        {/* <Price price={price}/> */}
+                        <li ><div className="flex flex-row">Color: {color}   <div className={` h-4 w-4 ${colorCode} rounded-lg  mt-1 ml-1`}></div></div></li>
+                        <li>description: {description}</li>
                     </ul>
                 </div>
             </div>

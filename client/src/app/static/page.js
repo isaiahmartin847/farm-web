@@ -29,7 +29,7 @@ export default function Static ()  {
             <>
                 {plants.map(plant => {
                     return (
-                        <ShowPlant key={plant.id} name={plant.name} type={plant.type} price={plant.price} description={plant.description}/>
+                        <ShowPlant key={plant.id} {...plant}/>
                     )
                 })}
             </>
