@@ -1,4 +1,4 @@
-import Price from "./price"
+import Price from "../price"
 
 
 export default function ShowPlant ({name, type, species, price, color, colorCode, description}) {

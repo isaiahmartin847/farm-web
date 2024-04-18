@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from "react"
-import ShowPlant from "../components/show_plant"
+import ShowPlant from "../components/static-components/show_plant"
 import Loading from "../components/loading"
 
 
