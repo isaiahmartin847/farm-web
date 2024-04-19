@@ -5,6 +5,7 @@ import { useEffect, useState } from "react"
 import ShowPlant from "../components/static-components/show_plant"
 import Loading from "../components/loading"
 import Title from "../components/title"
+import NavBarStatic from "../components/static-components/nav_bar"
 
 
 
@@ -52,7 +53,7 @@ export default function Static ()  {
         return (
             <>
 
-
+                <NavBarStatic />
                 <Title title={"Main Slicing Tomatoes"}></Title>
                 {largeTomatoes.map(item => {
                     return (
