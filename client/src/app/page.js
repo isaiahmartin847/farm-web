@@ -6,7 +6,10 @@ import React, { Suspense } from 'react';
 export default function Main () {
   return (
     <>
-      <NavBar />  
+      <NavBar 
+      btnName={"list"}
+      btnUrl={"/list"}
+      />  
       <List />
     </>
   )

@@ -43,7 +43,10 @@ export default function Cart() {
 
     return (
         <>
-            <NavBar />
+            <NavBar 
+            btnName={"Home"}
+            btnUrl={"/"}
+            />
             
             {Object.entries(cart).length === 0 ? (
                 <EmptyCart></EmptyCart>
