@@ -8,17 +8,18 @@ import Loading from "./loading"
 
 
 export default function List () {
-    const [plants, setPlants] = useState(null)
+    const [plants, setPlants] = useState({})
     const [largeTomatoes, setLargeTomatoes] = useState({})
     const [smallTomatoesState, setSmallTomatoes] = useState(null)
     const [peppers, setPeppers] = useState(null)
     const [cart, setCart] = useState(null)
-    const [isLoading, setIsLoading] = useState(true)
+    const [isLoading, setIsLoading] = useState(1)
 
 
     useEffect(() => {
          const storedData = JSON.parse(localStorage.getItem("cart"))
          const getPlantData =  () => {
+            //fetching the data from the api 
             fetch('http://localhost:8080/plants')
             .then(response => {
                 if(!response.ok){
@@ -27,13 +28,18 @@ export default function List () {
                 return response.json()
             })
             .then(data => {
-                console.log(data)
+                setIsLoading(() => {
+                    return 0
+                })
+
+                setPlants(data)
             })
             .catch(error => {
                 console.log(`there was on error ${error}`)
             })
+            //setting all the values of the states
+            
 
-            setIsLoading(false)
          }
 
          getPlantData()
@@ -56,20 +62,29 @@ export default function List () {
         localStorage.setItem("cart", JSON.stringify(cart))
     }, [cart])
 
+    if(isLoading === 0) {
+         console.log(plants)
+        setSmallTomatoes(() => {
+            return plants.filter(plant => plant.type === "cherry")
+        })
+        setLargeTomatoes(() => {
+            return plants.filter(plant => plant.type === "large") 
+        })
+        setPeppers(() => {
+            return plants.filter(plant => plant.species === "pepper")
+        })
 
-    if(true) {
-        return (
-            <h1>testing</h1>
-        )
-    } else {
 
+        setIsLoading(3)
+
+    }
+    
+
+    if(isLoading === 3) {
     
         return(
             <>
 
-                {isLoading ? (
-                    <Loading />
-                ) : (
                     <div>
                     <Title title={"Main Slicing Tomatoes"}></Title>
                     {largeTomatoes.map(item => {
@@ -90,10 +105,12 @@ export default function List () {
                         )
                     })}
                     </div>
-                )}
+                
 
             </>
         )
+    } else {
+        return <isLoading />
     }
 }
 
