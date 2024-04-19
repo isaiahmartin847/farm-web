@@ -10,8 +10,13 @@ import Loading from "./loading"
 export default function List () {
     const [plants, setPlants] = useState({})
     const [largeTomatoes, setLargeTomatoes] = useState({})
-    const [smallTomatoesState, setSmallTomatoes] = useState(null)
-    const [peppers, setPeppers] = useState(null)
+    const [cherryTomatoesState, setCherryTomatoes] = useState(null)
+    const [sweetPeppers, setSweetPeppers] = useState(null)
+    const [hotPeppers, setHotPeppers] = useState(null)
+    const [otherPlants, setOtherPlants] = useState(null)
+    const [strawberries, setStrawberries] = useState(null)
+    const [asparagus, setAsparagus] = useState(null)
+
     const [cart, setCart] = useState(null)
     const [isLoading, setIsLoading] = useState(1)
 
@@ -63,16 +68,13 @@ export default function List () {
     }, [cart])
 
     if(isLoading === 0) {
-         console.log(plants)
-        setSmallTomatoes(() => {
-            return plants.filter(plant => plant.type === "cherry")
-        })
-        setLargeTomatoes(() => {
-            return plants.filter(plant => plant.type === "large") 
-        })
-        setPeppers(() => {
-            return plants.filter(plant => plant.species === "pepper")
-        })
+        
+        setCherryTomatoes(plants.filter(plant => plant.type === "cherry"))
+        setLargeTomatoes(plants.filter(plant => plant.type === "large"))
+        setSweetPeppers(plants.filter(plant => plant.type === "sweet"))
+        setHotPeppers(plants.filter(plant => plant.type === "hot"))
+        setStrawberries(plants.filter(plant => plant.species === 'strawberries'))
+
 
 
         setIsLoading(3)
@@ -93,13 +95,25 @@ export default function List () {
                         )
                     })}
                     <Title title={"Cherry Tomatoes"}></Title>
-                    {smallTomatoesState.map(item => {
+                    {cherryTomatoesState.map(item => {
                         return (
                             < Plant key={item.id} {...item} cart={cart} setCart={setCart}/> 
                         )
                     })}
-                    <Title title={"peppers"}></Title>
-                    {peppers.map(item => {
+                    <Title title={"Sweet Peppers"}></Title>
+                    {sweetPeppers.map(item => {
+                        return (
+                            < Plant key={item.id} {...item} cart={cart} setCart={setCart}/> 
+                        )
+                    })}
+                    <Title title={"Hot Peppers"}></Title>
+                    {hotPeppers.map(item => {
+                        return (
+                            < Plant key={item.id} {...item} cart={cart} setCart={setCart}/> 
+                        )
+                    })}
+                    <Title title={"Strawberries"}/> 
+                    {strawberries.map(item => {
                         return (
                             < Plant key={item.id} {...item} cart={cart} setCart={setCart}/> 
                         )
@@ -110,7 +124,7 @@ export default function List () {
             </>
         )
     } else {
-        return <isLoading />
+        return <Loading />
     }
 }
 
