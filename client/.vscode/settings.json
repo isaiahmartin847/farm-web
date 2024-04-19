@@ -24,7 +24,7 @@
             "port": 3306,
             "driver": "MySQL",
             "name": "root",
-            "database": "first_database",
+            "database": "test_cart",
             "username": "root",
             "askForPassword": true
         }

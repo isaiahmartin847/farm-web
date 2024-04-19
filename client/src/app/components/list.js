@@ -74,6 +74,7 @@ export default function List () {
         setSweetPeppers(plants.filter(plant => plant.type === "sweet"))
         setHotPeppers(plants.filter(plant => plant.type === "hot"))
         setStrawberries(plants.filter(plant => plant.species === 'strawberries'))
+        setAsparagus(plants.filter(plant => plant.species === 'asparagus'))
 
 
 
@@ -91,31 +92,103 @@ export default function List () {
                     <Title title={"Main Slicing Tomatoes"}></Title>
                     {largeTomatoes.map(item => {
                         return (
-                            < Plant key={item.id} {...item} cart={cart} setCart={setCart}/> 
+                            <Plant
+                            key={item.id}
+                            cart={cart}
+                            setCart={setCart}
+                            //below this is all the plant data
+                            name={item.name}
+                            price={item.price}
+                            url={item.url}
+                            color={item.color}
+                            colorcode={item.colorcode}
+                            description={item.description}  
+                            />
                         )
                     })}
                     <Title title={"Cherry Tomatoes"}></Title>
                     {cherryTomatoesState.map(item => {
                         return (
-                            < Plant key={item.id} {...item} cart={cart} setCart={setCart}/> 
+                            <Plant
+                            key={item.id}
+                            cart={cart}
+                            setCart={setCart}
+                            //below this is all the plant data
+                            name={item.name}
+                            price={item.price}
+                            url={item.url}
+                            color={item.color}
+                            colorcode={item.colorcode}
+                            description={item.description}  
+                            />
                         )
                     })}
                     <Title title={"Sweet Peppers"}></Title>
                     {sweetPeppers.map(item => {
                         return (
-                            < Plant key={item.id} {...item} cart={cart} setCart={setCart}/> 
+                            <Plant
+                            key={item.id}
+                            cart={cart}
+                            setCart={setCart}
+                            //below this is all the plant data
+                            name={item.name}
+                            price={item.price}
+                            url={item.url}
+                            color={item.color}
+                            colorcode={item.colorcode}
+                            description={item.description}  
+                            />
                         )
                     })}
                     <Title title={"Hot Peppers"}></Title>
                     {hotPeppers.map(item => {
                         return (
-                            < Plant key={item.id} {...item} cart={cart} setCart={setCart}/> 
+                            <Plant
+                            key={item.id}
+                            cart={cart}
+                            setCart={setCart}
+                            //below this is all the plant data
+                            name={item.name}
+                            price={item.price}
+                            url={item.url}
+                            color={item.color}
+                            colorcode={item.colorcode}
+                            description={item.description}  
+                            />
                         )
                     })}
                     <Title title={"Strawberries"}/> 
                     {strawberries.map(item => {
                         return (
-                            < Plant key={item.id} {...item} cart={cart} setCart={setCart}/> 
+                            <Plant
+                            key={item.id}
+                            cart={cart}
+                            setCart={setCart}
+                            //below this is all the plant data
+                            name={item.name}
+                            price={item.price}
+                            url={item.url}
+                            color={item.color}
+                            colorcode={item.colorcode}
+                            description={item.description}  
+                            />
+                        )
+                    })}
+                    <Title title={"Asparagus"}></Title>
+                    {asparagus.map(item => {
+                        return (
+                            <Plant
+                            key={item.id}
+                            cart={cart}
+                            setCart={setCart}
+                            //below this is all the plant data
+                            name={item.name}
+                            price={item.price}
+                            url={item.url}
+                            color={item.color}
+                            colorcode={item.colorcode}
+                            description={item.description}  
+                            />
                         )
                     })}
                     </div>
@@ -127,6 +200,3 @@ export default function List () {
         return <Loading />
     }
 }
-
-
-
