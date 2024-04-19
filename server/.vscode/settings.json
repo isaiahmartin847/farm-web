@@ -9,22 +9,8 @@
             "server": "localhost",
             "port": 3306,
             "driver": "MySQL",
-            "name": "root ",
-            "database": "test_cart",
-            "username": "root",
-            "password": ""
-        },
-        {
-            "mysqlOptions": {
-                "authProtocol": "default",
-                "enableSsl": "Disabled"
-            },
-            "previewLimit": 50,
-            "server": "localhost",
-            "port": 3306,
-            "driver": "MySQL",
             "name": "root",
-            "database": "first_database",
+            "database": "test_cart",
             "username": "root",
             "password": "*Developer123"
         }
