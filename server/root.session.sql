@@ -44,7 +44,14 @@ ADD COLUMN days INT;
 
 
 -- @block 
-SELECT * FROM plantData
+SELECT * FROM plantData 
+WHERE name = "Prink Princess" 
+
+
+-- @block
+UPDATE plantData
+SET name = "Pink Princess"
+WHERE id = ""
 
 
 -- @block
@@ -78,5 +85,6 @@ AND in_stock = 1
 AND type = "sweet";
 
 
--- @block 
+-- @block
+UPDATE 
 
