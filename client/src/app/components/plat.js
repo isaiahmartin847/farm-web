@@ -3,7 +3,7 @@ import moreBtn from "./more-btn-function";
 import Price from "./price";
 
 
-export default function Plant ({name, price, url, color, colorCode, cart, setCart}) {
+export default function Plant ({name, price, url, color, colorcode, cart, setCart, description}) {
     
 
     const handleClick = (cart, itemName) => {
@@ -27,8 +27,8 @@ export default function Plant ({name, price, url, color, colorCode, cart, setCar
                         <h1  className="mr-1 text-lg" >Name: {name}</h1>                    
                         <ul  className="ml-5 pb-2">
                             <Price price={price}/>
-                            <li ><div className="flex flex-row">Color: {color}   <div className={` h-4 w-4 ${colorCode} rounded-lg bg-blue-200 mt-1 ml-1`}></div></div></li>
-                            <li>description: N/A</li>
+                            <li ><div className="flex flex-row">Color: {color}   <div className={` h-4 w-4 ${colorcode} rounded-lg bg-blue-200 mt-1 ml-1`}></div></div></li>
+                            <li>description: {description}</li>
                         </ul>
                     </div>
                     <div className="text-center">

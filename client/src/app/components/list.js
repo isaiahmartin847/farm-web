@@ -92,7 +92,7 @@ export default function List () {
                             < Plant key={item.id} {...item} cart={cart} setCart={setCart}/> 
                         )
                     })}
-                    <Title title={"Small-Fruited Tomatoes"}></Title>
+                    <Title title={"Cherry Tomatoes"}></Title>
                     {smallTomatoesState.map(item => {
                         return (
                             < Plant key={item.id} {...item} cart={cart} setCart={setCart}/> 
