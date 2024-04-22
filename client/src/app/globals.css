@@ -3,7 +3,9 @@
 @tailwind utilities;
 
 
-
+.orange {
+    background-color: orange;
+}
 .yellow {
     background-color: #FFFF00;
 }
@@ -14,11 +16,11 @@
 }
 
 .paleGreen {
-    background-color: #98fb98;
+    background-color: #a9ffa9;
 }
 
 .green {
-    background-color: #00FF00; 
+    background-color: #058405; 
 }
 
 .red { 
@@ -54,15 +56,15 @@
 }
 
 .pastel {
-    background-color: #C3B1E1;
+    background-color: #cebcec;
 }
 
 .teal {
-    background-color: #118a8a;
+    background-color: #148585;
 }
 
 .purple {
-    background-color: #800080;
+    background-color: #640e64;
 }
 
 
