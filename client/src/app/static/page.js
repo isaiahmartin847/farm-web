@@ -60,11 +60,11 @@ export default function Static ()  {
                         <ShowPlant
                         key={item.id}
                         name={item.name}
-                        price={item.price}
                         url={item.url}
                         color={item.color}
                         colorcode={item.colorcode}
                         description={item.description}  
+                        days={item.days}
                         />
                     )
                 })}
@@ -74,11 +74,11 @@ export default function Static ()  {
                         <ShowPlant
                         key={item.id}
                         name={item.name}
-                        price={item.price}
                         url={item.url}
                         color={item.color}
                         colorcode={item.colorcode}
                         description={item.description}  
+                        days={item.days}
                         />
                     )
                 })}
@@ -88,11 +88,11 @@ export default function Static ()  {
                         <ShowPlant
                         key={item.id}
                         name={item.name}
-                        price={item.price}
                         url={item.url}
                         color={item.color}
                         colorcode={item.colorcode}
                         description={item.description}  
+                        days={item.days}
                         />
                     )
                 })}
@@ -102,11 +102,11 @@ export default function Static ()  {
                         <ShowPlant
                         key={item.id}
                         name={item.name}
-                        price={item.price}
                         url={item.url}
                         color={item.color}
                         colorcode={item.colorcode}
                         description={item.description}  
+                        days={item.days}
                         />
                     )
                 })}
@@ -116,11 +116,11 @@ export default function Static ()  {
                         <ShowPlant
                         key={item.id}
                         name={item.name}
-                        price={item.price}
                         url={item.url}
                         color={item.color}
                         colorcode={item.colorcode}
                         description={item.description}  
+                        days={item.days}
                         />
                     )
                 })}
@@ -130,11 +130,11 @@ export default function Static ()  {
                         <ShowPlant
                         key={item.id}
                         name={item.name}
-                        price={item.price}
                         url={item.url}
                         color={item.color}
                         colorcode={item.colorcode}
                         description={item.description}  
+                        days={item.days}
                         />
                     )
                 })}

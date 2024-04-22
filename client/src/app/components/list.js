@@ -103,6 +103,7 @@ export default function List () {
                             color={item.color}
                             colorcode={item.colorcode}
                             description={item.description}  
+                            days={item.days}
                             />
                         )
                     })}
@@ -120,6 +121,7 @@ export default function List () {
                             color={item.color}
                             colorcode={item.colorcode}
                             description={item.description}  
+                            days={item.days}
                             />
                         )
                     })}
@@ -137,6 +139,7 @@ export default function List () {
                             color={item.color}
                             colorcode={item.colorcode}
                             description={item.description}  
+                            days={item.days}
                             />
                         )
                     })}
@@ -153,7 +156,8 @@ export default function List () {
                             url={item.url}
                             color={item.color}
                             colorcode={item.colorcode}
-                            description={item.description}  
+                            description={item.description}
+                            days={item.days}  
                             />
                         )
                     })}
@@ -171,6 +175,7 @@ export default function List () {
                             color={item.color}
                             colorcode={item.colorcode}
                             description={item.description}  
+                            days={item.days}
                             />
                         )
                     })}
@@ -188,6 +193,7 @@ export default function List () {
                             color={item.color}
                             colorcode={item.colorcode}
                             description={item.description}  
+                            days={item.days}
                             />
                         )
                     })}

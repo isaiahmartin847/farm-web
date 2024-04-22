@@ -45,13 +45,13 @@ ADD COLUMN days INT;
 
 -- @block 
 SELECT * FROM plantData 
-WHERE name = "Prink Princess" 
+WHERE color = "Pink" 
 
 
 -- @block
 UPDATE plantData
-SET name = "Pink Princess"
-WHERE id = ""
+SET name = "Large Red Cherry"
+WHERE id = "10"
 
 
 -- @block
