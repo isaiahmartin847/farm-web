@@ -1,7 +1,8 @@
-export function GET() {
-    let res = {
-        name : "isaiah M"
-    } 
+import plantdata from "../PlantData.json"
 
-    return Response.json(res)
+export function GET() {
+    return Response.json(plantdata)
 }
+
+
+
