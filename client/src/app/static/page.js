@@ -40,7 +40,7 @@ export default function Static ()  {
             setLargeTomatoes(plants.filter(plant => plant.type === "large"))
             setSweetPeppers(plants.filter(plant => plant.type === "sweet"))
             setHotPeppers(plants.filter(plant => plant.type === "hot"))
-            setOtherPlants(plant.filter(plant => plant.species === "other"))
+            setOtherPlants(plants.filter(plant => plant.species === "other"))
             setStrawberries(plants.filter(plant => plant.species === 'strawberries'))
             setAsparagus(plants.filter(plant => plant.species === 'asparagus'))
 
@@ -99,6 +99,20 @@ export default function Static ()  {
                 })}
                 <Title title={"Hot Peppers"}></Title>
                 {hotPeppers.map(item => {
+                    return (
+                        <ShowPlant
+                        key={item.id}
+                        name={item.name}
+                        url={item.url}
+                        color={item.color}
+                        colorcode={item.colorcode}
+                        description={item.description}  
+                        days={item.days}
+                        />
+                    )
+                })}
+                <Title title={"Garden Greats"}></Title>
+                {otherPlants.map(item => {
                     return (
                         <ShowPlant
                         key={item.id}
