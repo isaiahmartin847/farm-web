@@ -11,9 +11,9 @@ export default function ShowPlant ({name, color, colorcode, description, days, u
                 <div className="ml-10">
                     <h1  className="mr-1 text-lg" >Name: <span className="font-serif text-xl">{name}</span></h1>                    
                     <ul  className="ml-5 pb-2">
-                        <li ><div className="flex flex-row">Color: {color}   <div className={` h-4 w-4 ${colorcode} rounded-lg  mt-1 ml-1`}></div></div></li>
+                        <li ><div className="flex flex-row">Pot Color: {color}   <div className={` h-4 w-4 ${colorcode} rounded-lg  mt-1 ml-1`}></div></div></li>
                         <li>Days: {days}</li>
-                        <li>description: <span className="font-serif text-[1.1em]">{description}</span></li>
+                        <li>Description: <span className="font-serif text-[1.1em]">{description}</span></li>
                     </ul>
                     <button className="bg-blue-500 w-full rounded text-white font-bold p-1" onClick={() => moreBtn(url)}>MORE</button>
                 </div>

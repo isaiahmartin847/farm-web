@@ -22,7 +22,7 @@ export default function Static ()  {
 
 
     useEffect(() => {
-        fetch("http://localhost:8080/plants")
+        fetch("http://localhost:3001/api")
             .then(res => {
                 if(!res) {
                     throw new Error("network response is not ok")
@@ -40,6 +40,7 @@ export default function Static ()  {
             setLargeTomatoes(plants.filter(plant => plant.type === "large"))
             setSweetPeppers(plants.filter(plant => plant.type === "sweet"))
             setHotPeppers(plants.filter(plant => plant.type === "hot"))
+            setOtherPlants(plant.filter(plant => plant.species === "other"))
             setStrawberries(plants.filter(plant => plant.species === 'strawberries'))
             setAsparagus(plants.filter(plant => plant.species === 'asparagus'))
 
