@@ -25,7 +25,7 @@ export default function List () {
          const storedData = JSON.parse(localStorage.getItem("cart"))
          const getPlantData =  () => {
             //fetching the data from the api 
-            fetch('http://localhost:3000/api')
+            fetch('http://localhost:3001/api')
             .then(response => {
                 if(!response.ok){
                     throw new Error("network error for fetching the data")
@@ -73,6 +73,7 @@ export default function List () {
         setLargeTomatoes(plants.filter(plant => plant.type === "large"))
         setSweetPeppers(plants.filter(plant => plant.type === "sweet"))
         setHotPeppers(plants.filter(plant => plant.type === "hot"))
+        setOtherPlants(plants.filter(plant => plant.type === "other"))
         setStrawberries(plants.filter(plant => plant.species === 'strawberries'))
         setAsparagus(plants.filter(plant => plant.species === 'asparagus'))
 
@@ -145,6 +146,24 @@ export default function List () {
                     })}
                     <Title title={"Hot Peppers"}></Title>
                     {hotPeppers.map(item => {
+                        return (
+                            <Plant
+                            key={item.id}
+                            cart={cart}
+                            setCart={setCart}
+                            //below this is all the plant data
+                            name={item.name}
+                            price={item.price}
+                            url={item.url}
+                            color={item.color}
+                            colorcode={item.colorcode}
+                            description={item.description}
+                            days={item.days}  
+                            />
+                        )
+                    })}
+                    <Title title={"Garden Greats"}></Title>
+                    {otherPlants.map(item => {
                         return (
                             <Plant
                             key={item.id}

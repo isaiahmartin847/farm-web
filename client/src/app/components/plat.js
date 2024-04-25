@@ -28,7 +28,7 @@ export default function Plant ({name, price, url, color, colorcode, cart, setCar
                         <ul  className="ml-5 pb-2">
                             <Price price={price}/>
                             <li>Days: {days}</li>
-                            <li ><div className="flex flex-row">Color: {color}   <div className={` h-4 w-4 ${colorcode} rounded-lg bg-blue-200 mt-1 ml-1`}></div></div></li>
+                            <li ><div className="flex flex-row">Pot Color: {color}   <div className={` h-4 w-4 ${colorcode} rounded-lg bg-blue-200 mt-1 ml-1`}></div></div></li>
                             <li>description: <span className="font-serif text-[1.1em]">{description}</span></li>
                         </ul>
                     </div>
