@@ -22,7 +22,7 @@ export default function Static ()  {
 
 
     useEffect(() => {
-        fetch("http://localhost:3001/api")
+        fetch("http://localhost:3000/api")
             .then(res => {
                 if(!res) {
                     throw new Error("network response is not ok")
