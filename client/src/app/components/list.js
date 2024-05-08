@@ -25,7 +25,7 @@ export default function List () {
          const storedData = JSON.parse(localStorage.getItem("cart"))
          const getPlantData =  () => {
             //fetching the data from the api 
-            fetch('http://localhost:3000/api')
+            fetch('https://farm-web-psi.vercel.app/api')
             .then(response => {
                 if(!response.ok){
                     throw new Error("network error for fetching the data")

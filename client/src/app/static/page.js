@@ -22,7 +22,7 @@ export default function Static ()  {
 
 
     useEffect(() => {
-        fetch("http://localhost:3000/api")
+        fetch("https://farm-web-psi.vercel.app/api")
             .then(res => {
                 if(!res) {
                     throw new Error("network response is not ok")
