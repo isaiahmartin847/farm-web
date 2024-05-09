@@ -67,4 +67,7 @@
     background-color: #640e64;
 }
 
-
+.hover-one-second:hover {
+    background-color: #bfdbfe; /* Tailwind color bg-blue-200 */
+    transition: background-color 1s;
+}
