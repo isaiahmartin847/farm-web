@@ -8,10 +8,10 @@ export default function AddedToCart ( {isActive,  setIsActive }) {
 
         setTimeout(() => {
             setIsActive(false)
-        }, 1000)
+        }, 700)
         return (
-            <div className="bg-red-500 h-full w-full">
-                <h1>this bitch was clicked</h1>
+            <div className="bg-lime-500 h-full w-full rounded-lg text-center">
+                <h1>Added to list</h1>
             </div>
         )
     }

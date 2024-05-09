@@ -32,12 +32,13 @@ export default function Plant ({name, price, url, color, colorcode, cart, setCar
 
         return (
             <div className="border-b-2  m-0.5 flex flex-col justify-center items-center ">
-                <AddedToCart 
-                isActive={isActive}
-                setIsActive={setIsActive}
-                />
+
                 <div  className="m-0.5 p-3 w-[300px]">
                     <div className="ml-10">
+                        <AddedToCart 
+                        isActive={isActive}
+                        setIsActive={setIsActive}
+                        />
                         <h1  className="mr-1 text-lg" >Name: <span className="font-serif text-xl">{name}</span></h1>                   
                         <ul  className="ml-5 pb-2">
                             <Price price={price}/>
