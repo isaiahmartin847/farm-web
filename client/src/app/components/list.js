@@ -17,7 +17,7 @@ export default function List () {
     const [strawberries, setStrawberries] = useState(null)
     const [asparagus, setAsparagus] = useState(null)
 
-    const [cart, setCart] = useState(null)
+    const [cart, setCart] = useState({})
     const [isLoading, setIsLoading] = useState(1)
 
 
