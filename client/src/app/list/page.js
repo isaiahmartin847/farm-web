@@ -57,10 +57,12 @@ export default function Cart() {
             {Object.keys(cart).map(key => {
                 return (
                     <div key={key} className="border mb-4 flex-col justify-center text-center">
-                        <h1>Name: {key}</h1>
-                        <h2>Count: {cart[key]}</h2>
-                        <button className="bg-red-500 rounded p-1 mr-1" onClick={() => {decermentItem(key)}}>remove One</button>
-                        <button className="bg-red-500 rounded p-1" onClick={() => {removeItem(key)}}>Remove All</button>
+                        <h1><span className="text-lg">Name:</span> <span className="font-bold">{key}</span></h1>
+                        <h2><span className="italic pr-1 font-semibold">Count</span>: {cart[key]}</h2>
+                        <div className="text-white font-semibold">
+                            <button className="bg-orange-400 rounded p-1 mr-1" onClick={() => {decermentItem(key)}}>remove One</button>
+                            <button className="bg-red-500 rounded p-1" onClick={() => {removeItem(key)}}>Remove All</button>
+                        </div>
                     </div>
                 )
             })}            
