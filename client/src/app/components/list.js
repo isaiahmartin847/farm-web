@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import Plant from "./plat"
 import Title from "./title"
 import Loading from "./loading"
+import OnDeskTop from "./onDeskTop"
 
 
 
@@ -24,7 +25,7 @@ export default function List () {
     useEffect(() => {
          const storedData = JSON.parse(localStorage.getItem("cart"))
          const getPlantData =  () => {
-            //fetching the data from the api 
+            //fetchLoom Videoing the data from the api 
             fetch('https://farm-web-psi.vercel.app/api')
             .then(response => {
                 if(!response.ok){
@@ -87,8 +88,8 @@ export default function List () {
     if(isLoading === 3) {
     
         return(
-            <>
-
+            <>  
+                    <OnDeskTop />
                     <div>
                     <Title title={"Main Slicing Tomatoes"}></Title>
                     {largeTomatoes.map(item => {
